@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assistance pour Harry Magic: Cours de potions</title>
+  <meta name="description" content="Signale un bug, pose une question sur un achat ou propose une idée pour Harry Magic: Cours de potions. Nous répondons par e-mail.">
+  <link rel="canonical" href="https://harrymagic.app/fr/support/">
+  <link rel="alternate" hreflang="en" href="https://harrymagic.app/support/">
+  <link rel="alternate" hreflang="de" href="https://harrymagic.app/de/support/">
+  <link rel="alternate" hreflang="fr" href="https://harrymagic.app/fr/support/">
+  <link rel="alternate" hreflang="es" href="https://harrymagic.app/es/support/">
+  <link rel="alternate" hreflang="pt-BR" href="https://harrymagic.app/pt-br/support/">
+  <link rel="alternate" hreflang="ru" href="https://harrymagic.app/ru/support/">
+  <link rel="alternate" hreflang="x-default" href="https://harrymagic.app/support/">
+  <meta name="apple-itunes-app" content="app-id=6809835630">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Harry Magic">
+  <meta property="og:title" content="Assistance pour Harry Magic: Cours de potions">
+  <meta property="og:description" content="Signale un bug, pose une question sur un achat ou propose une idée pour Harry Magic: Cours de potions. Nous répondons par e-mail.">
+  <meta property="og:url" content="https://harrymagic.app/fr/support/">
+  <meta property="og:image" content="https://harrymagic.app/img/fr/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#170e2b">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/CormorantSC-Bold.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/fr/"><img src="/img/icon.webp" alt="" width="32" height="32">Harry Magic</a>
+    <nav class="top-nav" aria-label="Guides"><a href="/fr/guides/">Guides</a><a href="/fr/support/">Assistance</a></nav>
+    <nav class="langs" aria-label="Langue"><a href="/support/" hreflang="en" title="English">EN</a> <a href="/de/support/" hreflang="de" title="Deutsch">DE</a> <a href="/fr/support/" aria-current="page" hreflang="fr" title="Français">FR</a> <a href="/es/support/" hreflang="es" title="Español">ES</a> <a href="/pt-br/support/" hreflang="pt-BR" title="Português">PT</a> <a href="/ru/support/" hreflang="ru" title="Русский">RU</a></nav>
+  </header>
+
+  <main class="article">
+  <div class="sheet">
+    <h1>Assistance</h1>
+    <p class="lead">Tu as trouvé un bug, un souci avec un achat ou une idée à proposer ? Écris-nous, nous te répondrons par e-mail.</p>
+    <form class="support" action="https://docs.google.com/forms/d/e/1FAIpQLScSSlPnCnLE9n87cy6qWk67htLlPdQESTHoxeMVENP8pt8F-w/formResponse" method="post">
+      <label for="email">Ton e-mail</label>
+      <input id="email" name="entry.469611318" type="email" autocomplete="email" required>
+      <label for="message">Comment pouvons-nous t&#x27;aider ?</label>
+      <textarea id="message" name="entry.1488954149" rows="6" required></textarea>
+      <p class="fail" role="alert" hidden>Le message n&#x27;a pas été envoyé. Vérifie ta connexion et réessaie. <a href="https://docs.google.com/forms/d/e/1FAIpQLScSSlPnCnLE9n87cy6qWk67htLlPdQESTHoxeMVENP8pt8F-w/viewform">L&#x27;envoyer via Google Forms</a></p>
+      <button class="cta" type="submit">Envoyer</button>
+      <p class="cta-note">Nous utilisons ton e-mail uniquement pour te répondre. Ton message est stocké dans Google Forms.</p>
+    </form>
+    <p class="note done" role="status" hidden>Merci, ton message est envoyé. Nous te répondrons par e-mail.</p>
+  </div>
+  </main>
+  <script>
+const form = document.querySelector(".support");
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const button = form.querySelector("button");
+  button.disabled = true;
+  try {
+    await fetch(form.action, {method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(form))});
+    form.remove();
+    document.querySelector(".done").hidden = false;
+  } catch {
+    form.querySelector(".fail").hidden = false;
+    button.disabled = false;
+  }
+});
+</script>
+
+  <footer>
+    <p class="links"><a href="/fr/guides/">Guides</a> <a href="/fr/support/">Assistance</a> <a href="/privacy/">Politique de confidentialité</a> <a href="/terms/">Conditions d'utilisation</a></p>
+    <p class="disclaimer">Harry Magic: Cours de potions est un jeu indépendant. Il n&#x27;est ni affilié à Warner Bros., Portkey Games ou J.K. Rowling, ni approuvé ou parrainé par eux. Harry Potter et Poudlard sont des marques appartenant à leurs propriétaires.</p>
+    <p>© 2026 buildFor</p>
+  </footer>
+</body>
+</html>

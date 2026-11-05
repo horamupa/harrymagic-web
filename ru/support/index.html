@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Поддержка игры Harry Magic: Урок зельеварения</title>
+  <meta name="description" content="Сообщите об ошибке, задайте вопрос о покупке или предложите идею для игры Harry Magic: Урок зельеварения. Мы ответим по почте.">
+  <link rel="canonical" href="https://harrymagic.app/ru/support/">
+  <link rel="alternate" hreflang="en" href="https://harrymagic.app/support/">
+  <link rel="alternate" hreflang="de" href="https://harrymagic.app/de/support/">
+  <link rel="alternate" hreflang="fr" href="https://harrymagic.app/fr/support/">
+  <link rel="alternate" hreflang="es" href="https://harrymagic.app/es/support/">
+  <link rel="alternate" hreflang="pt-BR" href="https://harrymagic.app/pt-br/support/">
+  <link rel="alternate" hreflang="ru" href="https://harrymagic.app/ru/support/">
+  <link rel="alternate" hreflang="x-default" href="https://harrymagic.app/support/">
+  <meta name="apple-itunes-app" content="app-id=6809835630">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Harry Magic">
+  <meta property="og:title" content="Поддержка игры Harry Magic: Урок зельеварения">
+  <meta property="og:description" content="Сообщите об ошибке, задайте вопрос о покупке или предложите идею для игры Harry Magic: Урок зельеварения. Мы ответим по почте.">
+  <meta property="og:url" content="https://harrymagic.app/ru/support/">
+  <meta property="og:image" content="https://harrymagic.app/img/ru/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#170e2b">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/CormorantSC-Bold.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/ru/"><img src="/img/icon.webp" alt="" width="32" height="32">Harry Magic</a>
+    <nav class="top-nav" aria-label="Статьи"><a href="/ru/stati/">Статьи</a><a href="/ru/support/">Поддержка</a></nav>
+    <nav class="langs" aria-label="Язык"><a href="/support/" hreflang="en" title="English">EN</a> <a href="/de/support/" hreflang="de" title="Deutsch">DE</a> <a href="/fr/support/" hreflang="fr" title="Français">FR</a> <a href="/es/support/" hreflang="es" title="Español">ES</a> <a href="/pt-br/support/" hreflang="pt-BR" title="Português">PT</a> <a href="/ru/support/" aria-current="page" hreflang="ru" title="Русский">RU</a></nav>
+  </header>
+
+  <main class="article">
+  <div class="sheet">
+    <h1>Поддержка</h1>
+    <p class="lead">Нашли ошибку, не получается с покупкой или есть предложение? Напишите нам, и мы ответим по почте.</p>
+    <form class="support" action="https://docs.google.com/forms/d/e/1FAIpQLScSSlPnCnLE9n87cy6qWk67htLlPdQESTHoxeMVENP8pt8F-w/formResponse" method="post">
+      <label for="email">Ваша почта</label>
+      <input id="email" name="entry.469611318" type="email" autocomplete="email" required>
+      <label for="message">Чем вам помочь?</label>
+      <textarea id="message" name="entry.1488954149" rows="6" required></textarea>
+      <p class="fail" role="alert" hidden>Сообщение не отправлено. Проверьте соединение и попробуйте ещё раз. <a href="https://docs.google.com/forms/d/e/1FAIpQLScSSlPnCnLE9n87cy6qWk67htLlPdQESTHoxeMVENP8pt8F-w/viewform">Отправить через Google Forms</a></p>
+      <button class="cta" type="submit">Отправить</button>
+      <p class="cta-note">Почту мы используем только для ответа вам. Сообщение хранится в Google Forms.</p>
+    </form>
+    <p class="note done" role="status" hidden>Спасибо, сообщение отправлено. Мы ответим по почте.</p>
+  </div>
+  </main>
+  <script>
+const form = document.querySelector(".support");
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const button = form.querySelector("button");
+  button.disabled = true;
+  try {
+    await fetch(form.action, {method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(form))});
+    form.remove();
+    document.querySelector(".done").hidden = false;
+  } catch {
+    form.querySelector(".fail").hidden = false;
+    button.disabled = false;
+  }
+});
+</script>
+
+  <footer>
+    <p class="links"><a href="/ru/stati/">Статьи</a> <a href="/ru/support/">Поддержка</a> <a href="/privacy/">Политика конфиденциальности</a> <a href="/terms/">Условия использования</a></p>
+    <p class="disclaimer">Harry Magic: Урок зельеварения является независимой игрой. Она не связана с Warner Bros., Portkey Games и Дж. К. Роулинг, не одобрена и не спонсируется ими. Harry Potter и Hogwarts являются товарными знаками их владельцев.</p>
+    <p>© 2026 buildFor</p>
+  </footer>
+</body>
+</html>

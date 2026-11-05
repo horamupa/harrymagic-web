@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support für Harry Magic: Zaubertrankstunde</title>
+  <meta name="description" content="Melde einen Fehler, frag zu einem Kauf oder schlag eine Idee für Harry Magic: Zaubertrankstunde vor. Wir antworten per E-Mail.">
+  <link rel="canonical" href="https://harrymagic.app/de/support/">
+  <link rel="alternate" hreflang="en" href="https://harrymagic.app/support/">
+  <link rel="alternate" hreflang="de" href="https://harrymagic.app/de/support/">
+  <link rel="alternate" hreflang="fr" href="https://harrymagic.app/fr/support/">
+  <link rel="alternate" hreflang="es" href="https://harrymagic.app/es/support/">
+  <link rel="alternate" hreflang="pt-BR" href="https://harrymagic.app/pt-br/support/">
+  <link rel="alternate" hreflang="ru" href="https://harrymagic.app/ru/support/">
+  <link rel="alternate" hreflang="x-default" href="https://harrymagic.app/support/">
+  <meta name="apple-itunes-app" content="app-id=6809835630">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Harry Magic">
+  <meta property="og:title" content="Support für Harry Magic: Zaubertrankstunde">
+  <meta property="og:description" content="Melde einen Fehler, frag zu einem Kauf oder schlag eine Idee für Harry Magic: Zaubertrankstunde vor. Wir antworten per E-Mail.">
+  <meta property="og:url" content="https://harrymagic.app/de/support/">
+  <meta property="og:image" content="https://harrymagic.app/img/de/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#170e2b">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/CormorantSC-Bold.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/de/"><img src="/img/icon.webp" alt="" width="32" height="32">Harry Magic</a>
+    <nav class="top-nav" aria-label="Ratgeber"><a href="/de/ratgeber/">Ratgeber</a><a href="/de/support/">Support</a></nav>
+    <nav class="langs" aria-label="Sprache"><a href="/support/" hreflang="en" title="English">EN</a> <a href="/de/support/" aria-current="page" hreflang="de" title="Deutsch">DE</a> <a href="/fr/support/" hreflang="fr" title="Français">FR</a> <a href="/es/support/" hreflang="es" title="Español">ES</a> <a href="/pt-br/support/" hreflang="pt-BR" title="Português">PT</a> <a href="/ru/support/" hreflang="ru" title="Русский">RU</a></nav>
+  </header>
+
+  <main class="article">
+  <div class="sheet">
+    <h1>Support</h1>
+    <p class="lead">Du hast einen Fehler gefunden, ein Problem mit einem Kauf oder einen Vorschlag? Schreib uns, wir antworten per E-Mail.</p>
+    <form class="support" action="https://docs.google.com/forms/d/e/1FAIpQLScSSlPnCnLE9n87cy6qWk67htLlPdQESTHoxeMVENP8pt8F-w/formResponse" method="post">
+      <label for="email">Deine E-Mail-Adresse</label>
+      <input id="email" name="entry.469611318" type="email" autocomplete="email" required>
+      <label for="message">Wie können wir helfen?</label>
+      <textarea id="message" name="entry.1488954149" rows="6" required></textarea>
+      <p class="fail" role="alert" hidden>Die Nachricht wurde nicht gesendet. Prüfe deine Verbindung und versuche es noch einmal. <a href="https://docs.google.com/forms/d/e/1FAIpQLScSSlPnCnLE9n87cy6qWk67htLlPdQESTHoxeMVENP8pt8F-w/viewform">Über Google Forms senden</a></p>
+      <button class="cta" type="submit">Senden</button>
+      <p class="cta-note">Wir verwenden deine E-Mail-Adresse nur, um dir zu antworten. Deine Nachricht wird in Google Forms gespeichert.</p>
+    </form>
+    <p class="note done" role="status" hidden>Danke, deine Nachricht ist angekommen. Wir antworten per E-Mail.</p>
+  </div>
+  </main>
+  <script>
+const form = document.querySelector(".support");
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const button = form.querySelector("button");
+  button.disabled = true;
+  try {
+    await fetch(form.action, {method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(form))});
+    form.remove();
+    document.querySelector(".done").hidden = false;
+  } catch {
+    form.querySelector(".fail").hidden = false;
+    button.disabled = false;
+  }
+});
+</script>
+
+  <footer>
+    <p class="links"><a href="/de/ratgeber/">Ratgeber</a> <a href="/de/support/">Support</a> <a href="/privacy/">Datenschutz</a> <a href="/terms/">Nutzungsbedingungen</a></p>
+    <p class="disclaimer">Harry Magic: Zaubertrankstunde ist ein unabhängiges Spiel. Es steht in keiner Verbindung zu Warner Bros., Portkey Games oder J.K. Rowling und wird von ihnen weder unterstützt noch gesponsert. Harry Potter und Hogwarts sind Marken ihrer jeweiligen Inhaber.</p>
+    <p>© 2026 buildFor</p>
+  </footer>
+</body>
+</html>
